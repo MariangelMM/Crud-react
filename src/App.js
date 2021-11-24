@@ -27,7 +27,7 @@ export default function App() {
             {!auth.isAuth ? <Login setAuth={setAuth} /> : <Redirect to="/" />}
           </Route>
           <Route path="/">
-            {auth.isAuth ? <Home /> : <Redirect to="/login" />}
+            {auth.isAuth ? <Home setAuth={setAuth} auth={auth} /> : <Redirect to="/login" />}
           </Route>
         </Switch>
       </div>
