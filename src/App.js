@@ -1,36 +1,25 @@
-import React, { useState, useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
-
-import { Home } from "./pages/Home";
-import { Login } from "./pages/Login";
-
-export default function App() {
-  const [auth, setAuth] = useState({ name: "", isAuth: false });
-
-  useEffect(() => {
-    // lectura de local storage para actualizar el estado auth en cada renderizado
-    const _auth = JSON.parse(localStorage.getItem("user"));
-    _auth && setAuth(_auth);
-  }, []);
-
+function App() {
   return (
-    <Router>
-      <div>
-        <Switch>
-          <Route path="/login">
-            {!auth.isAuth ? <Login setAuth={setAuth} /> : <Redirect to="/" />}
-          </Route>
-          <Route path="/">
-            {auth.isAuth ? <Home setAuth={setAuth} auth={auth} /> : <Redirect to="/login" />}
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
+
+export default App;
