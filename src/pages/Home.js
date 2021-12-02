@@ -1,11 +1,12 @@
-import React from 'react'
-import { Link } from "react-router-dom";
+import React  from "react";
+import { Header } from "../components/layouts/Header";
 
-export const Home = () => {
+export const Home = ({ auth, setAuth }) => {
+   
     return (
-        <div>
-            Home
-            <Link to="/login">Ir a Login</Link>
+        <div className="home__container">
+                 <Header setAuth={setAuth} auth={auth} />
+                 <h2 className="home__title">Administración de Usuarios</h2>
         </div>
-    )
-}
+    );
+};
