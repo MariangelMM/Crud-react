@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableUsers } from '../components/Home/TableUsers';
+import { TableUsers } from '../components/home/TableUsers';
 import { Header} from "../components/layouts/Header";
 
 export const Home = ({auth, setAuth}) => {
