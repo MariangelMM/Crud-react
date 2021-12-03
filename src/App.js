@@ -26,7 +26,7 @@ user && setAuth(user)
             {!auth.isAuth ? <Login setAuth={setAuth}/> : <Redirect to="/" />}
           </Route>
           <Route path="/">
-            {auth.isAuth ? <Home /> : <Redirect to="/login" />}
+            {auth.isAuth ? <Home setAuth={setAuth} auth={auth} /> : <Redirect to="/login" />}
           </Route>
         </Switch>
       </div>
