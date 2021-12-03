@@ -25,7 +25,7 @@ export const Header = ({auth, setAuth}) => {
 
     return(
         <div className="header-container">
-             <Popover content={content} title={`${auth.name}@everis.com`}>
+             <Popover content={content} title={`${auth.nombre}@everis.com`}>
                  <Badge dot={true}>
                  <Avatar
                    src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
